@@ -7,9 +7,9 @@
 [![Face Recognition](https://img.shields.io/badge/Face%20Recognition-1.3.0-orange.svg)](https://github.com/ageitgey/face_recognition)
 
 <div align="center">
-  <img src="https://img.shields.io/github/stars/yourusername/smart-reservation-project?style=social" alt="GitHub Stars">
-  <img src="https://img.shields.io/github/forks/yourusername/smart-reservation-project?style=social" alt="GitHub Forks">
-  <img src="https://img.shields.io/github/watchers/yourusername/smart-reservation-project?style=social" alt="GitHub Watchers">
+  <img src="https://img.shields.io/github/stars/amirreza-yar/smart-reservation-project?style=social" alt="GitHub Stars">
+  <img src="https://img.shields.io/github/forks/amirreza-yar/smart-reservation-project?style=social" alt="GitHub Forks">
+  <img src="https://img.shields.io/github/watchers/amirreza-yar/smart-reservation-project?style=social" alt="GitHub Watchers">
 </div>
 
 ## 📝 Overview
@@ -59,7 +59,7 @@ backend/
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/smart-reservation-project.git
+git clone https://github.com/amirreza-yar/smart-reservation-project.git
 cd smart-reservation-project/backend
 ```
 
@@ -111,7 +111,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 👥 Authors
 
-- **Your Name** - *Initial work* - [Your GitHub](https://github.com/yourusername)
+- **Your Name** - *Initial work* - [Your GitHub](https://github.com/amirreza-yar)
 
 ## 🙏 Acknowledgments
 
@@ -123,7 +123,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 - 📧 Email: your.email@example.com
 - 💬 Discord: [Join our community](https://discord.gg/your-server)
-- 📝 Issues: [GitHub Issues](https://github.com/yourusername/smart-reservation-project/issues)
+- 📝 Issues: [GitHub Issues](https://github.com/amirreza-yar/smart-reservation-project/issues)
 
 ## ⭐ Show your support
 
@@ -132,5 +132,5 @@ Give a ⭐️ if this project helped you!
 ---
 
 <div align="center">
-  <sub>Built with ❤️ by <a href="https://github.com/yourusername">Your Name</a></sub>
+  <sub>Built with ❤️ by <a href="https://github.com/amirreza-yar">Your Name</a></sub>
 </div> 
