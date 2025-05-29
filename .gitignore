@@ -1,0 +1,6 @@
+.data
+.venv
+.dev
+face_db.p
+*/__pycache__
+django_src
