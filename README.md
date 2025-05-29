@@ -7,6 +7,10 @@
 [![Face Recognition](https://img.shields.io/badge/Face%20Recognition-1.3.0-orange.svg)](https://github.com/ageitgey/face_recognition)
 
 <div align="center">
+  <img src="docs/social-card.svg" alt="Smart Reservation Project Social Card" width="600">
+  <br>
+  <img src="docs/favicon.svg" alt="Smart Reservation Project Favicon" width="32">
+  <br>
   <img src="https://img.shields.io/github/stars/amirreza-yar/smart-reservation?style=social" alt="GitHub Stars">
   <img src="https://img.shields.io/github/forks/amirreza-yar/smart-reservation?style=social" alt="GitHub Forks">
   <img src="https://img.shields.io/github/watchers/amirreza-yar/smart-reservation?style=social" alt="GitHub Watchers">

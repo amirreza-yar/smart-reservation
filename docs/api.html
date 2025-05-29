@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Primary Meta Tags -->
+    <title>API Reference - Smart Reservation System</title>
+    <meta name="title" content="API Reference - Smart Reservation System">
+    <meta name="description" content="Smart Reservation System API Reference - Detailed documentation of WebSocket API endpoints and commands">
+    <meta name="keywords" content="face recognition API, WebSocket API, reservation system API, face detection endpoints">
+    <meta name="author" content="Amirreza Yarahmadi">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://amirreza-yar.github.io/smart-reservation/api.html">
+    <meta property="og:title" content="API Reference - Smart Reservation System">
+    <meta property="og:description" content="Smart Reservation System API Reference - Detailed documentation of WebSocket API endpoints and commands">
+    <meta property="og:image" content="https://amirreza-yar.github.io/smart-reservation/social-card.png">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://amirreza-yar.github.io/smart-reservation/api.html">
+    <meta property="twitter:title" content="API Reference - Smart Reservation System">
+    <meta property="twitter:description" content="Smart Reservation System API Reference - Detailed documentation of WebSocket API endpoints and commands">
+    <meta property="twitter:image" content="https://amirreza-yar.github.io/smart-reservation/social-card.png">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://amirreza-yar.github.io/smart-reservation/api.html">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #1e40af;
+            --text-color: #1f2937;
+            --light-bg: #f3f4f6;
+            --code-bg: #1e1e1e;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 2rem 0;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            margin-left: 2rem;
+            transition: opacity 0.3s;
+        }
+        
+        .nav-links a:hover {
+            opacity: 0.8;
+        }
+        
+        .api-container {
+            margin: 2rem 0;
+        }
+        
+        .endpoint {
+            background: white;
+            border-radius: 10px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .endpoint h2 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        
+        .endpoint h3 {
+            color: var(--secondary-color);
+            margin: 1.5rem 0 1rem;
+        }
+        
+        .method {
+            display: inline-block;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            color: white;
+            font-weight: bold;
+            margin-right: 1rem;
+        }
+        
+        .method.websocket {
+            background-color: #9333ea;
+        }
+        
+        .code-block {
+            background: var(--code-bg);
+            color: white;
+            padding: 1rem;
+            border-radius: 5px;
+            margin: 1rem 0;
+            overflow-x: auto;
+        }
+        
+        .parameter {
+            margin: 1rem 0;
+        }
+        
+        .parameter h4 {
+            color: var(--secondary-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        .parameter p {
+            margin-bottom: 0.5rem;
+        }
+        
+        .response {
+            background: #f0fdf4;
+            border-left: 4px solid #22c55e;
+            padding: 1rem;
+            margin: 1rem 0;
+        }
+        
+        .error {
+            background: #fef2f2;
+            border-left: 4px solid #ef4444;
+            padding: 1rem;
+            margin: 1rem 0;
+        }
+        
+        footer {
+            background-color: var(--text-color);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            margin-top: 2rem;
+        }
+        
+        .social-links {
+            margin-top: 1rem;
+        }
+        
+        .social-links a {
+            color: white;
+            margin: 0 1rem;
+            font-size: 1.5rem;
+            transition: opacity 0.3s;
+        }
+        
+        .social-links a:hover {
+            opacity: 0.8;
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">Smart Reservation</div>
+                <div class="nav-links">
+                    <a href="index.html">Home</a>
+                    <a href="documentation.html">Documentation</a>
+                    <a href="api.html">API Reference</a>
+                    <a href="https://github.com/amirreza-yar/smart-reservation" target="_blank">GitHub</a>
+                    <a href="index.html#contact">Contact</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="api-container">
+            <h1>API Reference</h1>
+            <p>This document provides detailed information about the WebSocket API endpoints available in the Smart Reservation System.</p>
+
+            <div class="endpoint">
+                <h2>WebSocket Connection</h2>
+                <p>All API communication is done through WebSocket connections.</p>
+                
+                <div class="code-block">
+                    <pre><code>ws://your-server:8000</code></pre>
+                </div>
+            </div>
+
+            <div class="endpoint">
+                <h2>Enroll Face</h2>
+                <span class="method websocket">WebSocket</span>
+                <p>Register a new face in the system.</p>
+
+                <div class="parameter">
+                    <h4>Request</h4>
+                    <div class="code-block">
+                        <pre><code>{
+    "command": "ENROLL_FACE",
+    "frames": 5  // Number of frames to capture
+}</code></pre>
+                    </div>
+                </div>
+
+                <div class="parameter">
+                    <h4>Response</h4>
+                    <div class="response">
+                        <pre><code>{
+    "status": "success",
+    "message": "All frames received successfully, start enrolling...",
+    "face_id": "unique_face_id"
+}</code></pre>
+                    </div>
+                </div>
+
+                <div class="parameter">
+                    <h4>Error Response</h4>
+                    <div class="error">
+                        <pre><code>{
+    "status": "error",
+    "message": "Not all frames were received, try again"
+}</code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <div class="endpoint">
+                <h2>Detect Face</h2>
+                <span class="method websocket">WebSocket</span>
+                <p>Detect and recognize faces in real-time.</p>
+
+                <div class="parameter">
+                    <h4>Request</h4>
+                    <div class="code-block">
+                        <pre><code>{
+    "command": "DETECT_FACE",
+    "frames": 1  // Number of frames to process
+}</code></pre>
+                    </div>
+                </div>
+
+                <div class="parameter">
+                    <h4>Response</h4>
+                    <div class="response">
+                        <pre><code>{
+    "status": "success",
+    "message": "Face detected",
+    "face_id": "recognized_face_id",
+    "confidence": 0.95
+}</code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <div class="endpoint">
+                <h2>Request Status</h2>
+                <span class="method websocket">WebSocket</span>
+                <p>Get the current status of the system.</p>
+
+                <div class="parameter">
+                    <h4>Request</h4>
+                    <div class="code-block">
+                        <pre><code>{
+    "command": "REQUEST_STATUS"
+}</code></pre>
+                    </div>
+                </div>
+
+                <div class="parameter">
+                    <h4>Response</h4>
+                    <div class="response">
+                        <pre><code>{
+    "status": "success",
+    "message": "Status: OK",
+    "system_info": {
+        "uptime": "2h 30m",
+        "faces_registered": 150,
+        "active_connections": 5
+    }
+}</code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <div class="endpoint">
+                <h2>Shutdown</h2>
+                <span class="method websocket">WebSocket</span>
+                <p>Gracefully shutdown the server.</p>
+
+                <div class="parameter">
+                    <h4>Request</h4>
+                    <div class="code-block">
+                        <pre><code>{
+    "command": "SHUTDOWN"
+}</code></pre>
+                    </div>
+                </div>
+
+                <div class="parameter">
+                    <h4>Response</h4>
+                    <div class="response">
+                        <pre><code>{
+    "status": "success",
+    "message": "Server shutting down"
+}</code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <h3>Connect With Us</h3>
+            <div class="social-links">
+                <a href="https://github.com/amirreza-yar" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/amirreza-yarahmadi/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="mailto:yar.amirreza@gmail.com"><i class="fas fa-envelope"></i></a>
+                <a href="https://t.me/Amirrz_yar" target="_blank"><i class="fab fa-telegram"></i></a>
+            </div>
+            <p>© 2024 Amirreza Yarahmadi. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html> 

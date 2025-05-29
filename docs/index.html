@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Primary Meta Tags -->
+    <title>Smart Reservation System - Face Recognition Based Reservation System</title>
+    <meta name="title" content="Smart Reservation System - Face Recognition Based Reservation System">
+    <meta name="description" content="A cutting-edge face recognition-based reservation system with real-time detection, automated check-in, and secure access control. Built with Python, OpenCV, and Django.">
+    <meta name="keywords" content="face recognition, reservation system, OpenCV, WebSocket, Django, automated check-in, access control, attendance tracking, smart check-in, biometric authentication">
+    <meta name="author" content="Amirreza Yarahmadi">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://amirreza-yar.github.io/smart-reservation/">
+    <meta property="og:title" content="Smart Reservation System - Face Recognition Based Reservation System">
+    <meta property="og:description" content="A cutting-edge face recognition-based reservation system with real-time detection, automated check-in, and secure access control.">
+    <meta property="og:image" content="https://amirreza-yar.github.io/smart-reservation/social-card.png">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://amirreza-yar.github.io/smart-reservation/">
+    <meta property="twitter:title" content="Smart Reservation System - Face Recognition Based Reservation System">
+    <meta property="twitter:description" content="A cutting-edge face recognition-based reservation system with real-time detection, automated check-in, and secure access control.">
+    <meta property="twitter:image" content="https://amirreza-yar.github.io/smart-reservation/social-card.png">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://amirreza-yar.github.io/smart-reservation/">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Smart Reservation System",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Linux",
+        "description": "A cutting-edge face recognition-based reservation system with real-time detection and automated check-in capabilities",
+        "author": {
+            "@type": "Person",
+            "name": "Amirreza Yarahmadi"
+        },
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        }
+    }
+    </script>
+    
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #1e40af;
+            --text-color: #1f2937;
+            --light-bg: #f3f4f6;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 2rem 0;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            margin-left: 2rem;
+            transition: opacity 0.3s;
+        }
+        
+        .nav-links a:hover {
+            opacity: 0.8;
+        }
+        
+        .hero {
+            text-align: center;
+            padding: 4rem 0;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background-color: white;
+            color: var(--primary-color);
+            padding: 1rem 2rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: transform 0.3s;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-2px);
+        }
+        
+        .features {
+            padding: 4rem 0;
+            background-color: var(--light-bg);
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .feature-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .feature-card i {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        
+        .tech-stack {
+            padding: 4rem 0;
+        }
+        
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .tech-item {
+            text-align: center;
+            padding: 1rem;
+        }
+        
+        .tech-item img {
+            width: 64px;
+            height: 64px;
+            margin-bottom: 1rem;
+        }
+        
+        footer {
+            background-color: var(--text-color);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+        
+        .social-links {
+            margin-top: 1rem;
+        }
+        
+        .social-links a {
+            color: white;
+            margin: 0 1rem;
+            font-size: 1.5rem;
+            transition: opacity 0.3s;
+        }
+        
+        .social-links a:hover {
+            opacity: 0.8;
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">Smart Reservation</div>
+                <div class="nav-links">
+                    <a href="#features">Features</a>
+                    <a href="#tech-stack">Tech Stack</a>
+                    <a href="documentation.html">Documentation</a>
+                    <a href="api.html">API Reference</a>
+                    <a href="https://github.com/amirreza-yar/smart-reservation" target="_blank">GitHub</a>
+                    <a href="#contact">Contact</a>
+                </div>
+            </nav>
+            <div class="hero">
+                <h1>Smart Reservation System</h1>
+                <p>A cutting-edge face recognition-based reservation system for modern businesses</p>
+                <a href="https://github.com/amirreza-yar/smart-reservation" class="cta-button" target="_blank">View on GitHub</a>
+            </div>
+        </div>
+    </header>
+
+    <section id="features" class="features">
+        <div class="container">
+            <h2>Key Features</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <i class="fas fa-camera"></i>
+                    <h3>Advanced Face Detection</h3>
+                    <p>Real-time face recognition using state-of-the-art algorithms</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-bolt"></i>
+                    <h3>Real-time Communication</h3>
+                    <p>WebSocket-based instant updates and notifications</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Secure & Scalable</h3>
+                    <p>Built with security best practices and designed for scalability</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="tech-stack" class="tech-stack">
+        <div class="container">
+            <h2>Technology Stack</h2>
+            <div class="tech-grid">
+                <div class="tech-item">
+                    <img src="https://www.python.org/static/community_logos/python-logo-generic.svg" alt="Python">
+                    <h3>Python 3.8+</h3>
+                </div>
+                <div class="tech-item">
+                    <img src="https://opencv.org/wp-content/uploads/2020/07/OpenCV_logo_black.png" alt="OpenCV">
+                    <h3>OpenCV</h3>
+                </div>
+                <div class="tech-item">
+                    <img src="https://www.djangoproject.com/s/img/logos/django-logo-negative.svg" alt="Django">
+                    <h3>Django</h3>
+                </div>
+                <div class="tech-item">
+                    <img src="https://websockets.readthedocs.io/en/stable/_static/websockets.svg" alt="WebSocket">
+                    <h3>WebSocket</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <div class="container">
+            <h3>Connect With Us</h3>
+            <div class="social-links">
+                <a href="https://github.com/amirreza-yar" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/amirreza-yarahmadi/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="mailto:yar.amirreza@gmail.com"><i class="fas fa-envelope"></i></a>
+                <a href="https://t.me/Amirrz_yar" target="_blank"><i class="fab fa-telegram"></i></a>
+            </div>
+            <p>© 2024 Amirreza Yarahmadi. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html> 
