@@ -109,9 +109,9 @@ We welcome contributions! Please see our [Contributing Guidelines](CONTRIBUTING.
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 👥 Authors
+## 👥 Author
 
-- **Amirreza Yarahmadi** - *Initial work* - [GitHub](https://github.com/amirreza-yar)
+- **Amirreza Yarahmadi** - *Creator & Maintainer* - [GitHub](https://github.com/amirreza-yar)
 
 ## 🙏 Acknowledgments
 
