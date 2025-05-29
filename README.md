@@ -14,7 +14,7 @@
 
 ## 📝 Overview
 
-This repository contains the backend implementation of the Smart Reservation Project, a cutting-edge system that combines face detection and WebSocket communication for intelligent reservation management. Perfect for businesses looking to implement automated check-in systems, secure access control, or smart attendance tracking.
+This repository contains the backend implementation of the Smart Reservation Project, a cutting-edge face recognition-based reservation system that combines OpenCV, WebSocket, and Django to provide automated check-in, secure access control, and smart attendance tracking. Features real-time face detection, WebSocket communication for instant updates, and a scalable architecture. Perfect for businesses looking to implement modern, contactless verification systems with high accuracy and security. Built with Python 3.8+, OpenCV, dlib, and scikit-learn for robust face recognition capabilities.
 
 ## ✨ Key Features
 

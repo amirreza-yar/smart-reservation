@@ -42,7 +42,7 @@ class WebSocketServer:
                             all_frames = await self.receive_image_frames(websocket, frames)
                             if all_frames:
                                 log(f"All frames recieved", "INFO", "WEBSOCKET SERVER", command)
-                                await websocket.send(f"All frames received successfully, start {"enrolling" if command == "ENROLL_FACE" else "detecting"}...")
+                                await websocket.send(f"All frames received successfully, start {'enrolling' if command == 'ENROLL_FACE' else 'detecting'}...")
                             else:
                                 log(f"Problem in getting frames", "ERROR", "WEBSOCKET SERVER", "ENROLL_FACE")
                                 await websocket.send("Error: Not all frames were received, try again")
